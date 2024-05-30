@@ -28,4 +28,8 @@ export class EventService {
     deletePost(id:number): Observable<DeleteResult> {
         return from(this.eventPostRepository.delete(id))
     }
+
+    findEventById(id: number): Observable<EventPost> {
+        return from(this.eventPostRepository.findOne({ where: { id } }));
+    }
 }

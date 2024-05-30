@@ -31,4 +31,9 @@ export class EventController {
     delete( @Param('id') id:number): Observable<DeleteResult>{
             return this.eventService.deletePost(id)
     }
+
+    @Get(':id')
+    findById(@Param('id') id: number): Observable<EventPost> {
+        return this.eventService.findEventById(id);
+    }
 }
